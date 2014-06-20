@@ -416,7 +416,7 @@ INT32 wlan_connect(UINT32 ulSecType, CHAR *ssid, INT32 ssid_len,
 
 	// Wait for command complete event
 	SimpleLinkWaitEvent(HCI_CMND_WLAN_CONNECT, &ret);
-	errno = ret;
+//	errno = ret;
 
 	return(ret);
 }
@@ -450,7 +450,7 @@ INT32 wlan_connect(CHAR *ssid, INT32 ssid_len)
 
 	// Wait for command complete event
 	SimpleLinkWaitEvent(HCI_CMND_WLAN_CONNECT, &ret);
-	errno = ret;
+//	errno = ret;
 
 	return(ret);
 }
@@ -480,7 +480,7 @@ INT32 wlan_disconnect()
 
 	// Wait for command complete event
 	SimpleLinkWaitEvent(HCI_CMND_WLAN_DISCONNECT, &ret);
-	errno = ret;
+//	errno = ret;
 
 	return(ret);
 }
