@@ -80,6 +80,10 @@ extern "C" {
 #define IPPROTO_NONE            59          // No next header
 #define IPPROTO_RAW             255         // raw IP packet
 #define IPPROTO_MAX             256
+#ifndef INET6_ADDRSTRLEN
+#define INET6_ADDRSTRLEN    46
+#endif
+typedef INT16 ssize_t;
 
 //----------- Socket retunr codes  -----------
 
@@ -104,6 +108,7 @@ extern "C" {
 #endif /* ENOBUFS */
 
 #define __FD_SETSIZE            32
+#define FD_SETSIZE	__FD_SETSIZE
 
 #define  ASIC_ADDR_LEN          8
 	
@@ -121,7 +126,7 @@ typedef struct _sockaddr_t
     UINT8     sa_data[14];
 } sockaddr;
 
-typedef struct _sockaddr_in_t
+typedef struct sockaddr_in
 {
     INT16            sin_family;            // e.g. AF_INET
     UINT16   sin_port;              // e.g. htons(3490)
